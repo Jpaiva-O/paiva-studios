@@ -1,21 +1,21 @@
 /* Paiva Studios — interactions and data */
 
 const posts = [
-  { i: 0, type: "reel", title: "Natureza em movimento", caption: "#naturevideos #natureedit", likes: 68, comments: 7, date: "2026-11-07", url: "https://www.instagram.com/reel/DfcnlqoIPms/" },
-  { i: 1, type: "carousel", title: "Arquivo de julho", caption: "Um conjunto de quadros de julho de 2026.", likes: 89, comments: 15, date: "2026-07-28", url: "https://www.instagram.com/p/DbUtayVjYnD/" },
-  { i: 2, type: "carousel", title: "Memórias de maio", caption: "Do carrossel de maio de 2026.", likes: 57, comments: 2, date: "2026-05-14", url: "https://www.instagram.com/p/DYUpQDNjcsL/" },
-  { i: 3, type: "carousel", title: "Luz de abril", caption: "Um conjunto sereno de abril de 2026.", likes: 63, comments: 8, date: "2026-04-18", url: "https://www.instagram.com/p/DXSaSezn7rG/" },
-  { i: 4, type: "carousel", title: "O que gerou conversa", caption: "84 comentários — a publicação mais comentada do arquivo.", likes: 224, comments: 84, date: "2026-03-26", url: "https://www.instagram.com/p/DWWS_8oDaUX/" },
-  { i: 5, type: "carousel", title: "Quadro mais curtido", caption: "A publicação mais curtida da conta.", likes: 743, comments: 21, date: "2026-02-19", url: "https://www.instagram.com/p/DU9CV1fj40c/" },
-  { i: 6, type: "carousel", title: "Detalhes de janeiro", caption: "Pequenos detalhes, no final de janeiro de 2026.", likes: 62, comments: 2, date: "2026-01-28", url: "https://www.instagram.com/p/DUCnyaVjTHf/" },
-  { i: 7, type: "carousel", title: "Momentos tranquilos", caption: "Um conjunto mais suave de janeiro de 2026.", likes: 53, comments: 5, date: "2026-01-26", url: "https://www.instagram.com/p/DT-S7vHjUfY/" },
-  { i: 8, type: "carousel", title: "Ano novo, novos quadros", caption: "A primeira publicação de 2026.", likes: 42, comments: 0, date: "2026-01-05", url: "https://www.instagram.com/p/DTH8u9gEbpc/" },
-  { i: 9, type: "carousel", title: "Arquivo de outono", caption: "Um favorito de novembro de 2025.", likes: 121, comments: 1, date: "2025-11-16", url: "https://www.instagram.com/p/DRIkVKHjdLd/" },
-  { i: 10, type: "carousel", title: "Uma celebração", caption: "Foi uma alegria registrar este lindo baby shower, cheio de amor, risos e expectativa.", likes: 35, comments: 2, date: "2025-10-26", url: "https://www.instagram.com/p/DQScOmzD1AP/" },
-  { i: 11, type: "carousel", title: "Favorito de setembro", caption: "Um dos quadros mais amados de 2025.", likes: 298, comments: 17, date: "2025-09-19", url: "https://www.instagram.com/p/DOw_9UvjfZ5/" }
+  { i: 0, type: "video", title: "Natureza em movimento", caption: "Natureza em movimento.", date: "2026-11-07" },
+  { i: 1, type: "photo", title: "Arquivo de julho", caption: "Um conjunto de quadros de julho de 2026.", date: "2026-07-28" },
+  { i: 2, type: "photo", title: "Memórias de maio", caption: "Registros de maio de 2026.", date: "2026-05-14" },
+  { i: 3, type: "photo", title: "Luz de abril", caption: "Um conjunto sereno de abril de 2026.", date: "2026-04-18" },
+  { i: 4, type: "photo", title: "O que gerou conversa", caption: "Um dos trabalhos que mais gerou conversa.", date: "2026-03-26" },
+  { i: 5, type: "photo", title: "Quadro em destaque", caption: "O quadro mais querido do arquivo.", date: "2026-02-19" },
+  { i: 6, type: "photo", title: "Detalhes de janeiro", caption: "Pequenos detalhes, no final de janeiro de 2026.", date: "2026-01-28" },
+  { i: 7, type: "photo", title: "Momentos tranquilos", caption: "Um conjunto mais suave de janeiro de 2026.", date: "2026-01-26" },
+  { i: 8, type: "photo", title: "Ano novo, novos quadros", caption: "O primeiro registro de 2026.", date: "2026-01-05" },
+  { i: 9, type: "photo", title: "Arquivo de outono", caption: "Um favorito de novembro de 2025.", date: "2025-11-16" },
+  { i: 10, type: "photo", title: "Uma celebração", caption: "Foi uma alegria registrar este lindo baby shower, cheio de amor, risos e expectativa.", date: "2025-10-26" },
+  { i: 11, type: "photo", title: "Favorito de setembro", caption: "Um dos quadros mais amados de 2025.", date: "2025-09-19" }
 ];
 
-const lovedIds = [5, 11, 4];
+const featuredIds = [5, 11, 4];
 
 const monthNames = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."];
 
@@ -31,24 +31,24 @@ const galleryNote = document.getElementById("galleryNote");
 function renderGallery(filter = "all") {
   const shown = posts.filter((p) => {
     if (filter === "all") return true;
-    if (filter === "loved") return lovedIds.includes(p.i);
+    if (filter === "featured") return featuredIds.includes(p.i);
     return p.type === filter;
   });
 
   gallery.innerHTML = shown.map((p) => `
-    <button class="post" type="button" data-index="${p.i}" aria-label="Abrir ${p.title}, ${p.likes} curtidas">
+    <button class="post" type="button" data-index="${p.i}" aria-label="Abrir ${p.title}">
       <img src="assets/post-${p.i}.jpg" alt="${p.title}" loading="lazy" />
       <span class="post-overlay">
-        <span class="post-tag">${p.type === "reel" ? "Reel" : "Carrossel"}</span>
+        <span class="post-tag">${p.type === "video" ? "Vídeo" : "Fotografia"}</span>
         <span class="post-info">
-          <span>♥ ${p.likes} &nbsp; 💬 ${p.comments}<small>${formatDate(p.date)}</small></span>
+          <span>${formatDate(p.date)}<small>${p.type === "video" ? "Vídeo" : "Fotografia"}</small></span>
           <span aria-hidden="true">↗</span>
         </span>
       </span>
     </button>
   `).join("");
 
-  galleryNote.textContent = "Nenhuma publicação corresponde a este filtro.";
+  galleryNote.textContent = "Nenhum trabalho corresponde a este filtro.";
   galleryNote.hidden = shown.length > 0;
 
   // Ease tiles in one after another (90ms choreography)
@@ -74,7 +74,6 @@ const lightboxImage = document.getElementById("lightboxImage");
 const lightboxTitle = document.getElementById("lightboxTitle");
 const lightboxMeta = document.getElementById("lightboxMeta");
 const lightboxCaption = document.getElementById("lightboxCaption");
-const lightboxLink = document.getElementById("lightboxLink");
 let lastFocused = null;
 
 function burstHearts(originX, originY) {
@@ -106,9 +105,8 @@ function openLightbox(post, origin) {
   lightboxImage.src = `assets/post-${post.i}.jpg`;
   lightboxImage.alt = post.title;
   lightboxTitle.textContent = post.title;
-  lightboxMeta.textContent = `${formatDate(post.date)} · ${post.likes} curtidas · ${post.comments} comentários`;
+  lightboxMeta.textContent = `${formatDate(post.date)} · ${post.type === "video" ? "Vídeo" : "Fotografia"}`;
   lightboxCaption.textContent = post.caption;
-  lightboxLink.href = post.url;
   lightbox.hidden = false;
   document.body.style.overflow = "hidden";
   lightbox.querySelector(".lightbox-close").focus();
@@ -186,7 +184,7 @@ const countObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(el));
 
 /* =========================================================================
-   MOTION — integrated into the Instagram experience
+   MOTION — integrated into the portfolio experience
    Canvas particles in the hero, staggered entrances, heart bursts, marquee.
    No external dependencies; all effects respect reduced-motion.
    ========================================================================= */

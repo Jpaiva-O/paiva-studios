@@ -548,8 +548,8 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
 }
 @keyframes scrollPulse { 0%, 100% { transform: scaleY(0.4); opacity: 0.45; } 50% { transform: scaleY(1); opacity: 1; } }
 
-/* Reel badge with animated equalizer */
-.reel-badge {
+/* Video badge with animated equalizer */
+.video-badge {
   position: absolute;
   top: -16px;
   right: -14px;
@@ -679,7 +679,7 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
 
 @media (max-width: 640px) {
   .marquee span { font-size: 0.9rem; }
-  .reel-badge { right: -4px; top: -12px; font-size: 0.66rem; }
+  .video-badge { right: -4px; top: -12px; font-size: 0.66rem; }
 }
 
 @media (max-width: 560px) {

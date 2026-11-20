@@ -1,11 +1,11 @@
 ---
 name: paiva-studios-site
-description: Visual identity and build notes for the motion-enhanced Instagram portfolio site for @paiva_studios.
+description: Visual identity and build notes for the motion-enhanced photography portfolio of João Oliveira.
 ---
 
 # Paiva Studios — Design Identity
 
-A link-in-bio / visual journal site for **João Oliveira (@paiva_studios)**. Content comes from the connected Instagram account. Motion is integrated into that content — there is no separate "motion demo" or repository showcase in the UI.
+A photography and video portfolio for **João Oliveira**. Motion is integrated into the work itself — there is no separate "motion demo" or repository showcase in the UI.
 
 ## Principles
 
@@ -47,10 +47,10 @@ No web fonts — instant load, works offline.
 
 ## Content model
 
-- Profile: `paiva_studios`, João Oliveira, Creator account, 246 followers, 18 posts
-- Website (live link-in-bio): https://jpaiva-o.github.io/paiva-studios/
-- Gallery: 12 real posts (1 reel + 11 carousels), images cached locally in `assets/`
-- Raw source data: `data/posts.json`
+- Photographer: João Oliveira, Paiva Studios
+- Website: https://jpaiva-o.github.io/paiva-studios/
+- Gallery: 12 works (1 video + 11 photographs), images cached locally in `assets/`
+- Archive data: `data/posts.json`
 
 ## Integrated motion
 
@@ -58,12 +58,12 @@ No web fonts — instant load, works offline.
 |---|---|---|
 | Hero copy | Staggered entrance, 90ms ease-out | Leads the eye from badge to headline to actions |
 | Hero background | Canvas particles that drift and lean away from the cursor | Depth without distraction |
-| Feature card | Floating cards + animated equalizer reel badge | Signals new content, adds life |
+| Feature card | Floating cards + animated equalizer video badge | Signals new content, adds life |
 | Gallery | Tiles ease in with a 60ms stagger on load and filter change | Makes filtering feel responsive |
-| Post click | Heart burst from the click point, then lightbox transition | Playful "like" feedback that links back to Instagram |
+| Post click | Heart burst from the click point, then lightbox transition | Playful feedback when a frame is opened |
 | Between sections | Scrolling name ribbon | Keeps the brand present during long scrolls |
 | Top edge | Scroll progress bar | Shows position in the archive |
-| Stats | Count-up once on view | Draws attention to real account numbers |
+| Stats | Count-up once on view | Draws attention to the size of the archive |
 | Header | Condenses into glass on scroll | Keeps navigation present without crowding the viewport |
 | Hero photo | Gentle scroll parallax + film-strip texture | Adds cinematic depth (Apple restraint, Pixar warmth) |
 | CTA | Warm end-card glow + twinkling stars | Gives the page a memorable, storybook finish |
