@@ -325,3 +325,47 @@ if (progressBar) {
   }, { passive: true });
   updateProgress();
 }
+
+/* --- Apple-like compact glass header on scroll --- */
+const siteHeader = document.getElementById("siteHeader");
+if (siteHeader) {
+  let headerTick = false;
+  function updateHeader() {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+    headerTick = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!headerTick) {
+      requestAnimationFrame(updateHeader);
+      headerTick = true;
+    }
+  }, { passive: true });
+  updateHeader();
+}
+
+/* --- Subtle scroll parallax for the hero photograph --- */
+if (!prefersReducedMotion) {
+  const parallaxEls = [...document.querySelectorAll("[data-parallax]")];
+  if (parallaxEls.length) {
+    let parallaxTick = false;
+    function updateParallax() {
+      const vh = window.innerHeight;
+      parallaxEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom < -120 || rect.top > vh + 120) return;
+        const speed = parseFloat(el.dataset.parallax) || 0.08;
+        const distance = rect.top + rect.height / 2 - vh / 2;
+        el.style.transform = `translate3d(0, ${(distance * speed).toFixed(1)}px, 0)`;
+      });
+      parallaxTick = false;
+    }
+    window.addEventListener("scroll", () => {
+      if (!parallaxTick) {
+        requestAnimationFrame(updateParallax);
+        parallaxTick = true;
+      }
+    }, { passive: true });
+    window.addEventListener("resize", updateParallax);
+    updateParallax();
+  }
+}

@@ -10,9 +10,11 @@ A link-in-bio / visual journal site for **João Oliveira (@paiva_studios)**. Con
 ## Principles
 
 1. **Photography first** — warm, low-contrast surfaces let the images carry the color.
-2. **Accessible by default** — skip link, labeled controls, visible focus, reduced-motion support.
-3. **Motion with meaning** — subtle reveals and feedback that guide attention, never decorate without purpose.
-4. **Tokens before components** — colors, radii, and shadows are CSS variables.
+2. **Apple precision** — generous whitespace, restrained type, glass surfaces, spring-like easing, compact nav on scroll.
+3. **Pixar warmth** — cinematic light, film-strip texture, rounded shapes, playful sparkles and heart bursts.
+4. **Accessible by default** — skip link, labeled controls, visible focus, reduced-motion support.
+5. **Motion with meaning** — subtle reveals and feedback that guide attention, never decorate without purpose.
+6. **Tokens before components** — colors, radii, and shadows are CSS variables.
 
 ## Color tokens (dark default)
 
@@ -31,7 +33,7 @@ Light theme swaps neutrals only; the accent pair stays constant.
 
 ## Typography
 
-- Display: system sans, 700, -0.045em, clamp(2.6rem, 7vw, 4.6rem)
+- Display: system sans, 730, -0.06em, clamp(2.8rem, 7vw, 5.2rem)
 - Headings: system sans, 650, -0.025em
 - Body: system sans, 1rem / 1.65
 - Mono: `ui-monospace, SFMono-Regular, Menlo, monospace` for stats and meta
@@ -46,7 +48,7 @@ No web fonts — instant load, works offline.
 ## Content model
 
 - Profile: `paiva_studios`, João Oliveira, Creator account, 246 followers, 18 posts
-- Website: https://paiva-studios.merlin-site.com
+- Website (live link-in-bio): https://jpaiva-o.github.io/paiva-studios/
 - Gallery: 12 real posts (1 reel + 11 carousels), images cached locally in `assets/`
 - Raw source data: `data/posts.json`
 
@@ -62,6 +64,9 @@ No web fonts — instant load, works offline.
 | Between sections | Scrolling name ribbon | Keeps the brand present during long scrolls |
 | Top edge | Scroll progress bar | Shows position in the archive |
 | Stats | Count-up once on view | Draws attention to real account numbers |
+| Header | Condenses into glass on scroll | Keeps navigation present without crowding the viewport |
+| Hero photo | Gentle scroll parallax + film-strip texture | Adds cinematic depth (Apple restraint, Pixar warmth) |
+| CTA | Warm end-card glow + twinkling stars | Gives the page a memorable, storybook finish |
 
 ## Motion rules
 
