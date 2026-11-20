@@ -171,6 +171,10 @@ h1, h2, h3, p { margin-top: 0; }
 .btn-secondary { border-color: var(--line); background: var(--surface); color: var(--text); }
 .btn-secondary:hover { border-color: var(--accent); }
 .btn-light { background: #fff; color: #1a1108; }
+.btn-whatsapp { background: #25d366; color: #062d18; box-shadow: 0 10px 24px rgba(37, 211, 102, 0.22); }
+.btn-whatsapp:hover { box-shadow: 0 16px 34px rgba(37, 211, 102, 0.36); }
+.wa-icon { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.btn-sm .wa-icon { width: 17px; height: 17px; }
 .text-link { color: var(--accent); font-weight: 650; }
 .text-link:hover { text-decoration: underline; }
 
@@ -587,6 +591,30 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
   to { opacity: 1; transform: none; }
 }
 
+/* Floating WhatsApp shortcut — always within thumb reach */
+.wa-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 45;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #062d18;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: waPulse 2.8s ease-out infinite;
+  transition: transform 0.32s var(--ease-out);
+}
+.wa-fab:hover { transform: translateY(-4px) scale(1.06); }
+.wa-fab .wa-icon { width: 30px; height: 30px; }
+@keyframes waPulse {
+  0% { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.42); }
+  70%, 100% { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 18px rgba(37, 211, 102, 0); }
+}
+
 /* Heart burst when a post is opened */
 .heart-particle {
   position: fixed;
@@ -644,6 +672,7 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
   .float-card-bottom { right: 6px; }
   .section-head { flex-direction: column; align-items: start; gap: 12px; }
   .nav, .status-pill { display: none; }
+  .header-actions { margin-left: auto; }
   .cta-inner { flex-direction: column; align-items: start; gap: 30px; }
   .cta-actions { flex-direction: row; align-items: center; flex-wrap: wrap; }
 }
@@ -661,6 +690,10 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
   .stats dd { font-size: 1.5rem; }
   .about-card { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .header-actions .btn-whatsapp { padding: 9px 12px; font-size: 0; gap: 0; }
+  .header-actions .btn-whatsapp .wa-icon { width: 19px; height: 19px; }
+  .wa-fab { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .wa-fab .wa-icon { width: 27px; height: 27px; }
   .lightbox-info { flex-direction: column; align-items: start; }
   .footer-inner { flex-direction: column; gap: 8px; }
 }
@@ -669,6 +702,6 @@ body.motion-settled .gallery .post { opacity: 1; transform: none; animation: non
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal, .stagger-in, .gallery .post { opacity: 1; transform: none; animation: none; }
-  .marquee-track, .eq i, .hero-scroll-hint span, .status-pill i, .cta-spark, .cta-glow { animation: none; }
+  .marquee-track, .eq i, .hero-scroll-hint span, .status-pill i, .cta-spark, .cta-glow, .wa-fab { animation: none; }
   .hero-film { opacity: 0.25; }
 }
