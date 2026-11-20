@@ -1,27 +1,27 @@
 /* Paiva Studios — interactions and data */
 
 const posts = [
-  { i: 0, type: "reel", title: "Nature, in motion", caption: "#naturevideos #natureedit", likes: 68, comments: 7, date: "2026-11-07", url: "https://www.instagram.com/reel/DfcnlqoIPms/" },
-  { i: 1, type: "carousel", title: "July archive", caption: "A set of frames from July 2026.", likes: 89, comments: 15, date: "2026-07-28", url: "https://www.instagram.com/p/DbUtayVjYnD/" },
-  { i: 2, type: "carousel", title: "May memories", caption: "From the May 2026 carousel.", likes: 57, comments: 2, date: "2026-05-14", url: "https://www.instagram.com/p/DYUpQDNjcsL/" },
-  { i: 3, type: "carousel", title: "April light", caption: "A quiet set from April 2026.", likes: 63, comments: 8, date: "2026-04-18", url: "https://www.instagram.com/p/DXSaSezn7rG/" },
-  { i: 4, type: "carousel", title: "The conversation starter", caption: "84 comments — the most discussed post in the archive.", likes: 224, comments: 84, date: "2026-03-26", url: "https://www.instagram.com/p/DWWS_8oDaUX/" },
-  { i: 5, type: "carousel", title: "Most loved frame", caption: "The most-liked post on the account.", likes: 743, comments: 21, date: "2026-02-19", url: "https://www.instagram.com/p/DU9CV1fj40c/" },
-  { i: 6, type: "carousel", title: "January details", caption: "Small details, late January 2026.", likes: 62, comments: 2, date: "2026-01-28", url: "https://www.instagram.com/p/DUCnyaVjTHf/" },
-  { i: 7, type: "carousel", title: "Quiet moments", caption: "A softer set from January 2026.", likes: 53, comments: 5, date: "2026-01-26", url: "https://www.instagram.com/p/DT-S7vHjUfY/" },
-  { i: 8, type: "carousel", title: "New year, new frames", caption: "The first post of 2026.", likes: 42, comments: 0, date: "2026-01-05", url: "https://www.instagram.com/p/DTH8u9gEbpc/" },
-  { i: 9, type: "carousel", title: "Autumn archive", caption: "A November 2025 favourite.", likes: 121, comments: 1, date: "2025-11-16", url: "https://www.instagram.com/p/DRIkVKHjdLd/" },
-  { i: 10, type: "carousel", title: "A celebration", caption: "Such a joy capturing this beautiful baby shower filled with love, laughter, and anticipation.", likes: 35, comments: 2, date: "2025-10-26", url: "https://www.instagram.com/p/DQScOmzD1AP/" },
-  { i: 11, type: "carousel", title: "September favourite", caption: "One of the most loved frames from 2025.", likes: 298, comments: 17, date: "2025-09-19", url: "https://www.instagram.com/p/DOw_9UvjfZ5/" }
+  { i: 0, type: "reel", title: "Natureza em movimento", caption: "#naturevideos #natureedit", likes: 68, comments: 7, date: "2026-11-07", url: "https://www.instagram.com/reel/DfcnlqoIPms/" },
+  { i: 1, type: "carousel", title: "Arquivo de julho", caption: "Um conjunto de quadros de julho de 2026.", likes: 89, comments: 15, date: "2026-07-28", url: "https://www.instagram.com/p/DbUtayVjYnD/" },
+  { i: 2, type: "carousel", title: "Memórias de maio", caption: "Do carrossel de maio de 2026.", likes: 57, comments: 2, date: "2026-05-14", url: "https://www.instagram.com/p/DYUpQDNjcsL/" },
+  { i: 3, type: "carousel", title: "Luz de abril", caption: "Um conjunto sereno de abril de 2026.", likes: 63, comments: 8, date: "2026-04-18", url: "https://www.instagram.com/p/DXSaSezn7rG/" },
+  { i: 4, type: "carousel", title: "O que gerou conversa", caption: "84 comentários — a publicação mais comentada do arquivo.", likes: 224, comments: 84, date: "2026-03-26", url: "https://www.instagram.com/p/DWWS_8oDaUX/" },
+  { i: 5, type: "carousel", title: "Quadro mais curtido", caption: "A publicação mais curtida da conta.", likes: 743, comments: 21, date: "2026-02-19", url: "https://www.instagram.com/p/DU9CV1fj40c/" },
+  { i: 6, type: "carousel", title: "Detalhes de janeiro", caption: "Pequenos detalhes, no final de janeiro de 2026.", likes: 62, comments: 2, date: "2026-01-28", url: "https://www.instagram.com/p/DUCnyaVjTHf/" },
+  { i: 7, type: "carousel", title: "Momentos tranquilos", caption: "Um conjunto mais suave de janeiro de 2026.", likes: 53, comments: 5, date: "2026-01-26", url: "https://www.instagram.com/p/DT-S7vHjUfY/" },
+  { i: 8, type: "carousel", title: "Ano novo, novos quadros", caption: "A primeira publicação de 2026.", likes: 42, comments: 0, date: "2026-01-05", url: "https://www.instagram.com/p/DTH8u9gEbpc/" },
+  { i: 9, type: "carousel", title: "Arquivo de outono", caption: "Um favorito de novembro de 2025.", likes: 121, comments: 1, date: "2025-11-16", url: "https://www.instagram.com/p/DRIkVKHjdLd/" },
+  { i: 10, type: "carousel", title: "Uma celebração", caption: "Foi uma alegria registrar este lindo baby shower, cheio de amor, risos e expectativa.", likes: 35, comments: 2, date: "2025-10-26", url: "https://www.instagram.com/p/DQScOmzD1AP/" },
+  { i: 11, type: "carousel", title: "Favorito de setembro", caption: "Um dos quadros mais amados de 2025.", likes: 298, comments: 17, date: "2025-09-19", url: "https://www.instagram.com/p/DOw_9UvjfZ5/" }
 ];
 
 const lovedIds = [5, 11, 4];
 
-const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthNames = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."];
 
 function formatDate(iso) {
   const [year, month, day] = iso.split("-");
-  return `${monthNames[Number(month) - 1]} ${Number(day)}, ${year}`;
+  return `${Number(day)} ${monthNames[Number(month) - 1]} ${year}`;
 }
 
 /* Gallery */
@@ -36,10 +36,10 @@ function renderGallery(filter = "all") {
   });
 
   gallery.innerHTML = shown.map((p) => `
-    <button class="post" type="button" data-index="${p.i}" aria-label="Open ${p.title}, ${p.likes} likes">
+    <button class="post" type="button" data-index="${p.i}" aria-label="Abrir ${p.title}, ${p.likes} curtidas">
       <img src="assets/post-${p.i}.jpg" alt="${p.title}" loading="lazy" />
       <span class="post-overlay">
-        <span class="post-tag">${p.type === "reel" ? "Reel" : "Carousel"}</span>
+        <span class="post-tag">${p.type === "reel" ? "Reel" : "Carrossel"}</span>
         <span class="post-info">
           <span>♥ ${p.likes} &nbsp; 💬 ${p.comments}<small>${formatDate(p.date)}</small></span>
           <span aria-hidden="true">↗</span>
@@ -48,6 +48,7 @@ function renderGallery(filter = "all") {
     </button>
   `).join("");
 
+  galleryNote.textContent = "Nenhuma publicação corresponde a este filtro.";
   galleryNote.hidden = shown.length > 0;
 
   // Ease tiles in one after another (90ms choreography)
@@ -105,7 +106,7 @@ function openLightbox(post, origin) {
   lightboxImage.src = `assets/post-${post.i}.jpg`;
   lightboxImage.alt = post.title;
   lightboxTitle.textContent = post.title;
-  lightboxMeta.textContent = `${formatDate(post.date)} · ${post.likes} likes · ${post.comments} comments`;
+  lightboxMeta.textContent = `${formatDate(post.date)} · ${post.likes} curtidas · ${post.comments} comentários`;
   lightboxCaption.textContent = post.caption;
   lightboxLink.href = post.url;
   lightbox.hidden = false;
